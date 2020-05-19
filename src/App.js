@@ -1,11 +1,12 @@
 import React from 'react';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header>
-        <h1>Outpairrel</h1>
+        <h1 className="text-white bg-dark">Outpairrel</h1>
       </header>
     </div>
   );
