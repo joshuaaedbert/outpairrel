@@ -1,15 +1,19 @@
 import React from 'react';
 import './App.css';
 import Home from './Home.js';
+import Navbar from './components/Navbar.js';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <h1 className="text-white bg-dark">Outpairrel</h1>
-        <Home/>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <header>
+          {/* <Navbar /> */}
+          <Home/>
+        </header>
+      </div>
+    </BrowserRouter>
   );
 }
 
