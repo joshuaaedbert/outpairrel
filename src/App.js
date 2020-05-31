@@ -15,17 +15,21 @@ import {
   Input,
   Button
 } from 'reactstrap';
-import './App.css';
 import Home from './components/Home';
 import Discover from './components/Discover';
 import Style from './components/Style';
 import Wardrobe from './components/Wardrobe';
+import Post from './components/Post';
+
+import './App.css';
 
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
-
+      id: 0,
+      photo: 0,
+      like: 0
     }
   }
   render() {
@@ -62,6 +66,9 @@ export default class App extends Component {
         <Route exact path="/wardrobe" render={() => (
           <Wardrobe />
         )}/>
+        {/* <Route exact path="/post" render={() => (
+          <Post />
+        )}/> */}
       </Router>
     )
   }
