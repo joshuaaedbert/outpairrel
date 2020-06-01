@@ -20,6 +20,7 @@ import Home from './components/Home';
 import Discover from './components/Discover';
 import Style from './components/Style';
 import Wardrobe from './components/Wardrobe';
+import ProductQuery from './components/ProductQuery';
 
 export default class App extends Component {
   constructor() {
@@ -61,6 +62,9 @@ export default class App extends Component {
         )}/>
         <Route exact path="/wardrobe" render={() => (
           <Wardrobe />
+        )}/>
+        <Route exact path="/product_query" render={() => (
+          <ProductQuery />
         )}/>
       </Router>
     )
