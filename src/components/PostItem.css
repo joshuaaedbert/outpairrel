@@ -1,0 +1,12 @@
+img {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.article {
+    width: 600px;
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 40px;
+    padding: 50px 25px 100px 25px;
+}

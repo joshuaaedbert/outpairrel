@@ -19,24 +19,24 @@ import Home from './components/Home';
 import Discover from './components/Discover';
 import Style from './components/Style';
 import Wardrobe from './components/Wardrobe';
-import Post from './components/Post';
+// import Post from './components/Post';
 
 import './App.css';
 
 export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      id: 0,
-      photo: 0,
-      like: 0
-    }
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     id: 0,
+  //     photo: 0,
+  //     like: 0
+  //   }
+  // }
   render() {
     return (
       <Router>
         <div className="App bg-faded">
-          <Navbar className="bg-dark">
+          <Navbar className="bg-secondary">
             <NavbarBrand className="text-white" href="/">Outpairrel</NavbarBrand>
               <Nav>
                 <NavItem>
@@ -56,19 +56,16 @@ export default class App extends Component {
         </div>
         <Route exact path="/" render={() => (
           <Home />
-        )}/>
+        )} />
         <Route exact path="/discover" render={() => (
           <Discover />
-        )}/>
+        )} />
         <Route exact path="/style" render={() => (
           <Style />
-        )}/>
+        )} />
         <Route exact path="/wardrobe" render={() => (
           <Wardrobe />
-        )}/>
-        {/* <Route exact path="/post" render={() => (
-          <Post />
-        )}/> */}
+        )} />
       </Router>
     )
   }

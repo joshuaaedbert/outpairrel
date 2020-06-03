@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { 
+    BrowserRouter as Router,
+    Route,
+    Link 
+} from 'react-router-dom';
+import Post from './Post';
 import './PostItem.css';
 
 export default class PostItem extends Component {
@@ -10,14 +15,16 @@ export default class PostItem extends Component {
     render() {
         const {id, photo, like} = this.props;
         return (
-            <Link to={'post'}>
-                <div className="d-flex flex-column" onClick={this.handleClick}>
-                    <div className="d-flex">
-                        <img src={photo} alt={id} />
+            <Router>
+                <Link to={'post'}>
+                    <div className="article d-flex justify-content-center" onClick={this.handleClick}>
+                        <div>
+                            <img src={photo} alt={id} />
+                            <h6>{like} likes</h6>
+                        </div>
                     </div>
-                    <h6>{like} likes</h6>
-                </div>
-            </Link>
+                </Link>
+            </Router>
         );
     }
 }
