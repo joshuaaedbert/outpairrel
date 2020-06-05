@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './PostItem.css';
 
-export default class PostItem extends Component {
+export default class ProductItem extends Component {
     // constructor(props) {
     //     super(props);
     //     this.handleClick = this.handleClick.bind(this);
