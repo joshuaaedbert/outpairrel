@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { 
+import {
   BrowserRouter as Router,
   Route,
   Link
@@ -19,7 +19,7 @@ import Home from './components/Home';
 import Discover from './components/Discover';
 import Style from './components/Style';
 import Wardrobe from './components/Wardrobe';
-// import Post from './components/Post';
+import Post from './components/Post';
 
 import './App.css';
 
@@ -27,31 +27,29 @@ export default class App extends Component {
   // constructor() {
   //   super();
   //   this.state = {
-  //     id: 0,
-  //     photo: 0,
-  //     like: 0
   //   }
   // }
+
   render() {
     return (
       <Router>
         <div className="App bg-faded">
           <Navbar className="bg-secondary">
             <NavbarBrand className="text-white" href="/">Outpairrel</NavbarBrand>
-              <Nav>
-                <NavItem>
-                  <NavLink className="text-white" tag={Link} to='/'>Home</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="text-white" tag={Link} to='/discover'>Discover</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="text-white" tag={Link} to='/style'>Style</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink className="text-white" tag={Link} to='/wardrobe'>Wardrobe</NavLink>
-                </NavItem>
-              </Nav>
+            <Nav>
+              <NavItem>
+                <NavLink className="text-white" tag={Link} to='/'>Home</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink className="text-white" tag={Link} to='/discover'>Discover</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink className="text-white" tag={Link} to='/style'>Style</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink className="text-white" tag={Link} to='/wardrobe'>Wardrobe</NavLink>
+              </NavItem>
+            </Nav>
           </Navbar>
         </div>
         <Route exact path="/" render={() => (
@@ -66,6 +64,7 @@ export default class App extends Component {
         <Route exact path="/wardrobe" render={() => (
           <Wardrobe />
         )} />
+        <Route exact path="/post/:id" component={Post} />
       </Router>
     )
   }

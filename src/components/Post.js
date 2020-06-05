@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Post.css'
 
-export default class Post extends Component {
-    render() {
-        const {id, photo, like} = this.props;
-        return (
-            <div>
-                <img src={photo} alt={id}/>
-                <h6>{like} likes</h6>
-            </div>
-        );
-    }
+function Post({ match }) {
+    console.log(match);
+    return (
+        <h1 className="text-primary">id: {match.params.id}</h1>
+    )
 }
+
+export default Post;
