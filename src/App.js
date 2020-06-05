@@ -59,13 +59,13 @@ export default class App extends Component {
             </Nav>
           </Navbar>
         </div>
+
         <Route exact path="/" render={() => <Home />} />
         <Route exact path="/discover" render={() => <Discover />} />
         <Route exact path="/style" render={() => <Style />} />
         <Route exact path="/wardrobe" render={() => <Wardrobe />} />
         <Route exact path="/product_query" render={() => <ProductQuery />} />
         <Route exact path="/post/:id" component={Post} />
-        )} />
       </Router>
     );
   }
