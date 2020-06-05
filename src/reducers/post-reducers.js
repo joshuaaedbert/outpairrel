@@ -22,6 +22,8 @@ const initPostState = {
     hasMore: true
 }
 
-export const postReducer = (state = initPostState, action) => {
+const postReducer = (state = initPostState, action) => {
     return state;
 }
+
+export default postReducer;
