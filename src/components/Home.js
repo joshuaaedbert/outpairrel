@@ -4,12 +4,12 @@ import PostList from './PostList';
 import './Home.css';
 
 function Home() {
-    const posts = useSelector(state => state.posts);
-    return (
-        <div classname="posts">
-            <PostList posts={posts} />
-        </div>
-    )
+  const posts = useSelector(state => state.posts.posts);
+  return (
+    <div classname="posts">
+      <PostList posts={posts} />
+    </div>
+  );
 }
 
 export default Home;
