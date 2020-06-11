@@ -17,5 +17,6 @@
 }
 
 .posts {
+  margin: 0 1em;
   flex-grow: 2;
 }
