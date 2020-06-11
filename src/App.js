@@ -31,7 +31,7 @@ export default class App extends Component {
     return (
       <Router>
         <div className="App bg-faded">
-          <Navbar className="bg-secondary">
+          <Navbar className="navbar fixed-top bg-secondary">
             <NavbarBrand className="text-white" href="/">
               Outpairrel
             </NavbarBrand>
@@ -59,13 +59,14 @@ export default class App extends Component {
             </Nav>
           </Navbar>
         </div>
-
-        <Route exact path="/" render={() => <Home />} />
-        <Route exact path="/discover" render={() => <Discover />} />
-        <Route exact path="/style" render={() => <Style />} />
-        <Route exact path="/wardrobe" render={() => <Wardrobe />} />
-        <Route exact path="/product_query" render={() => <ProductQuery />} />
-        <Route exact path="/post/:id" component={Post} />
+        <div className="pages">
+          <Route exact path="/" render={() => <Home />} />
+          <Route exact path="/discover" render={() => <Discover />} />
+          <Route exact path="/style" render={() => <Style />} />
+          <Route exact path="/wardrobe" render={() => <Wardrobe />} />
+          <Route exact path="/product_query" render={() => <ProductQuery />} />
+          <Route exact path="/post/:id" component={Post} />
+        </div>
       </Router>
     );
   }

@@ -1,7 +1,6 @@
 const initPostState = {
     postLoading: false,
     posts: [
-
         {
             id: 0,
             photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/220px-Donald_Trump_official_portrait.jpg',
