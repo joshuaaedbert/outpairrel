@@ -4,21 +4,27 @@ import './Wardrobe_item.css'
 
 export default class Wardrobe_item extends Component {
     static propTypes = {
-        id: PropTypes.array
+        id: PropTypes.number,
+        tags: PropTypes.array,
     }
 
     constructor(props){
         super(props);
     }
     render() {
-        const {id} = this.props;
+        const {id, tags , expanded} = this.props;
+        let contentClass = expanded ? 'open' : '';
         return (
             <div>
-                <div className='item d-flex flex-row align-items-center justify-content-between'>
-                    <span className='text'>{id[0]}</span>
-                    <span className='rectangle'><img className='img' src={`image/${id[1]}.png`}/></span>
+                <div className={`item ${contentClass}`}>
+                    {/* <span className = {contentClass}>
+                    </span> */}
+                    {/* <span className='text'>{id}</span> */}
+                    {/* <span className='rectangle'><img className='img' src={`image/${id[1]}.png`}/></span>
                     <span className='rectangle'></span>
-                    <span className='rectangle'></span>
+                    <span className='rectangle'></span> */}
+                    <span className='rectangle'><img className='img' src={`image/${id}.png`}/></span>
+                    
                 </div>
             </div>
         )

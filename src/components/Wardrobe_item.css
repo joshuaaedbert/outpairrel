@@ -1,19 +1,26 @@
 .item {
     background-color: rgba(248, 248, 248, 0.753);
-    margin-left: 4rem;
+    margin-left: 64px;
     border-radius: 1px;
+    position: relative;
+    transition: all 0.15s;
+    padding: 0 20px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.item.open{
+    margin-left: 240px;
+    border-left: 240px;
 }
 
 .item .rectangle{
     width: 300px;
-    display: inline-block;
+    /* display: inline-block; */
     height: 300px;
     margin: 1rem;
     border-radius: 1rem;
     background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .item .text{
@@ -24,4 +31,5 @@
 .item .img{
     height: 300px;
     width: 300px;
+    object-fit: contain;
 }

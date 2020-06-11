@@ -1,0 +1,15 @@
+/* .wardrobe-list{
+    width: auto;
+    display: inline-block !important;
+    grid-template-columns: auto auto;
+} */
+
+.grid{
+    width: auto;
+    display: inline-grid !important;
+    grid-template-columns: auto auto;
+}
+
+.list-group{
+    flex-direction: unset !important;
+}
