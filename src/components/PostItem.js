@@ -17,7 +17,7 @@ export default class PostItem extends Component {
                 <div className="article d-flex justify-content-center" onClick={this.handleClick}>
                     <div>
                         <img src={photo} alt={id} />
-                        <h6>{like} likes</h6>
+                        <h6 className="likes">{like} likes</h6>
                     </div>
                 </div>
             </Link>
