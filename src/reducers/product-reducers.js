@@ -4,16 +4,16 @@ const initProductState = {
     {
       id: 0,
       photo:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/220px-Donald_Trump_official_portrait.jpg',
+        'https://i.blogs.es/9c5b6f/homewear-la-monocromatica-propuesta-de-pull-bear-para-adoptar-el-blanco-y-negro-en-casa/1366_2000.jpg',
     },
     {
       id: 1,
-      photo: 'https://i.mdel.net/oftheminute/images/2019/07/Jill-06.jpg',
+      photo: 'https://i.blogs.es/f0e716/homewear-la-monocromatica-propuesta-de-pull-bear-para-adoptar-el-blanco-y-negro-en-casa/1366_2000.jpg',
     },
     {
       id: 2,
       photo:
-        'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/karlie-kloss-is-seen-wearing-a-baby-blue-ralph-lauren-news-photo-1575557364.jpg',
+        'https://static.pullandbear.net/2/photos/2019/I/0/2/p/5590/524/606/5590524606_2_6_1.jpg',
     },
   ],
   hasMore: true,
