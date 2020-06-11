@@ -11,5 +11,5 @@
 }
 
 .list-group{
-    flex-direction: unset !important;
+    /* flex-direction: unset !important; */
 }
