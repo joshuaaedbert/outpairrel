@@ -1,5 +1,7 @@
 const postKey = 'posts';
 
+
+
 export function listWardrobe(filters = []) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -10,6 +12,8 @@ export function listWardrobe(filters = []) {
 
 // Simulated server-side code
 function _listWardrobe(filters = []) {
+    
+    // console.log("item: " + item)
     let postString = localStorage.getItem(postKey);
     let posts = postString ? JSON.parse(postString) : [];
     
@@ -41,6 +45,6 @@ function _createWardrobe(id, tags) {
     ];
     // localStorage.setItem(postKey, JSON.stringify([]));
     localStorage.setItem(postKey, JSON.stringify(posts));
-    console.log(posts)
+    // console.log('posts: '+ posts)
     return newPost;
 }

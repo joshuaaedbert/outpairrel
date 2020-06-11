@@ -8,8 +8,10 @@ import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/rea
 // import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import './react-sidenav.css'
 import Filter_list from './filter_list.js'
+import { connect } from 'react-redux';
+import { setfilters } from '../actions/wardrobe-actions';
 
-export default class Wardrobe extends Component {
+class Wardrobe extends Component {
 
     static propTypes = {
 
@@ -47,9 +49,12 @@ export default class Wardrobe extends Component {
 
     componentWillReceiveProps(nextProps) {
     }
+
     render() {
+        const {filter} = this.props
         let sidebarClass = this.state.buttonToggle ? 'sidebar-open' : 'sidebar';
         console.log(this.state.searchText)
+        // console.log('item: ' + item)
         return (
             <div>
                 {/* <h1 className="text-warning">WARDROBE</h1> */}
@@ -64,16 +69,16 @@ export default class Wardrobe extends Component {
                                     <i className='navbar-text fa fa-times' onClick={this.handleClearSearch}></i>
                                 }
                             </div>
-                            <Filter_list filter={this.state.searchText} handleClear={this.handleClear}/>
+                            <Filter_list filter={filter} handleClear={this.handleClear} />
                         </Collapse>
                     </SideNav>
-                    <Wardrobe_list className='wardrobe-list' lists={this.state.lists} filter={this.state.searchText} expanded={this.state.buttonToggle} />
+                    <Wardrobe_list className='wardrobe-list' lists={this.state.lists} filter={filter} expanded={this.state.buttonToggle} />
                 </div>
             </div>
         )
     }
 
-    
+
 
     handleClick() {
         this.setState((prevState, props) => ({
@@ -82,34 +87,52 @@ export default class Wardrobe extends Component {
     }
 
     handleSearchKeyPress(e) {
-        var a = [...this.state.searchText];
+        const {filter} = this.props;
+        // var a = [...this.state.searchText];
+        var a = [...filter];
         var keyCode = e.keyCode || e.which;
         if (keyCode === 13) {
-            if(!this.state.searchText.some(el => el === e.target.value.toLowerCase())){
-            this.setState({
-                searchText: [e.target.value.toLowerCase(), ...a]
-            });
-        }
+            //     if(!this.state.searchText.some(el => el === e.target.value.toLowerCase())){
+            //     this.setState({
+            //         searchText: [e.target.value.toLowerCase(), ...a]
+            //     });
+            //     this.props.dispatch(setfilters([e.target.value.toLowerCase(), ...a]))
+            // }
+            if (!filter.some(el => el === e.target.value.toLowerCase())) {
+                this.props.dispatch(setfilters([e.target.value.toLowerCase(), ...a]))
+            }
             this.searchEl.value = '';
         }
-        
+
     }
 
     handleClearSearch() {
-        this.setState({
-            searchText: this.state.searchText.filter(text => {
-                return text !== this.searchEl.value
-            })
-        })
+        const {filter} = this.props;
+        // this.setState({
+        //     searchText: this.state.searchText.filter(text => {
+        //         return text !== this.searchEl.value
+        //     })
+        // })
+        this.props.dispatch(setfilters(filter.filter(text => {
+                    return text !== this.searchEl.value
+                })))
         this.searchEl.value = '';
     }
 
-    handleClear(text){
+    handleClear(text) {
+        const {filter} = this.props;
         // console.log('text: ' + text)
-        this.setState({
-            searchText: this.state.searchText.filter(tags => {
-                return tags !== text
-            })
-        })
+        // this.setState({
+        //     searchText: this.state.searchText.filter(tags => {
+        //         return tags !== text
+        //     })
+        // })
+        this.props.dispatch(setfilters(filter.filter(tags => {
+            return  tags !== text
+        })))
     }
 }
+
+export default connect(state => ({
+    filter: state.filter
+}))(Wardrobe);

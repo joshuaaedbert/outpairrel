@@ -9,7 +9,3 @@
     display: inline-grid !important;
     grid-template-columns: auto auto;
 }
-
-.list-group{
-    /* flex-direction: unset !important; */
-}
