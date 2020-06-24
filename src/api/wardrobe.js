@@ -15,7 +15,21 @@ function _listWardrobe(filters = []) {
     
     // console.log("item: " + item)
     let postString = localStorage.getItem(postKey);
-    let posts = postString ? JSON.parse(postString) : [];
+    // let posts = postString ? JSON.parse(postString) : [];
+    let posts = [
+        {
+            id: 1,
+            tags: ['women','hoodie']
+        },
+        {
+            id: 1,
+            tags:['men','shirt']
+        },
+        {
+            id: 2,
+            tags:['hoodie']
+        }
+    ]
     
     console.log('filters: ' + filters)
     if (posts.length > 0 && filters.length > 0) {

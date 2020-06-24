@@ -10,32 +10,16 @@ export function filterReducer(state = [], action) {
 
 const initPostState = {
     item: [
-        {
-            id: 1,
-            tags: ['women','hoodie']
-        },
-        {
-            id: 1,
-            tags:['men','shirt']
-        },
-        {
-            id: 2,
-            tags:['hoodie']
-        }
-
     ]
 }
 
 export function wardrobeReducer(state = initPostState, action) {
     switch (action.type) {
         case '@POST/END_LIST_POSTS':
-            if (!action.posts){
-                return {
-                    ...state,
-                    item: action.posts
-                };
-            }
-            else return state;
+            return {
+                ...state,
+                item: action.posts
+            };
         case '@POST/END_CREATE_POST':
             var newItems = [...state.item];
             newItems = [action.post, ...newItems];
