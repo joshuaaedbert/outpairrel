@@ -9,24 +9,21 @@
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
-<<<<<<< HEAD
     "materialize-css": "^1.0.0-rc.2",
-=======
     "moment": "^2.26.0",
->>>>>>> temp
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
-<<<<<<< HEAD
     "react-redux": "^7.2.0",
     "react-router": "^5.2.0",
-=======
     "react-grid-gallery": "^0.5.5",
->>>>>>> temp
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
-    "reactstrap": "^8.4.1"
+    "reactstrap": "^8.4.1",
+    "@trendmicro/react-sidenav": "^0.5.0",
+    "prop-types": "^15.7.2",
+    "react-promise": "^3.0.2"
   },
   "scripts": {
     "start": "npm run watch:css && react-scripts start",

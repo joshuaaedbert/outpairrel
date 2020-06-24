@@ -1,5 +1,3 @@
-# VENESIA SINTING
-<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -68,6 +66,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-=======
-One of a kind fashion app!!!
->>>>>>> 7f7f89c6a1ca4c363a61cde550a1d82a396981b7
