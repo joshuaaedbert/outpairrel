@@ -11,7 +11,7 @@ export function filterReducer(state = [], action) {
 const initPostState = {
     item: [
         {
-            id: 1,
+            id: 0,
             tags: ['women','hoodie']
         },
         {

@@ -1,7 +1,5 @@
 const postKey = 'posts';
 
-
-
 export function listWardrobe(filters = []) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {

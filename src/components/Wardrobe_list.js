@@ -32,7 +32,7 @@ class Wardrobe_list extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (JSON.stringify(nextProps.filter) != JSON.stringify(this.props.filter)) {
+        if (JSON.stringify(nextProps.filter) !== JSON.stringify(this.props.filter)) {
             // this.listWardrobe(nextProps.filter);
             this.props.dispatch(listPosts(nextProps.filter));
         }
