@@ -1,5 +1,5 @@
 // import axios from 'axios';
-import React from 'react';
+// import React from 'react';
 // const key = '36b99220c9mshc808751dbcee44cp15bb91jsn8b4b792f0418';
 // let HennesMauritz = 'https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/regions/list';
 
