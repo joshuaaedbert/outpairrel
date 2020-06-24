@@ -29,10 +29,13 @@ const initPostState = {
 export function wardrobeReducer(state = initPostState, action) {
     switch (action.type) {
         case '@POST/END_LIST_POSTS':
-            return {
-                ...state,
-                item: action.posts
-            };
+            if (!action.posts){
+                return {
+                    ...state,
+                    item: action.posts
+                };
+            }
+            else return state;
         case '@POST/END_CREATE_POST':
             var newItems = [...state.item];
             newItems = [action.post, ...newItems];
