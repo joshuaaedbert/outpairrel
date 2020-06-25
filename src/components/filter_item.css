@@ -12,12 +12,21 @@
 
 .filter-item i{
     position: absolute;
-    right: 0.25rem;
-    top: 0.4rem;
+    /* right: 1rem; */
+    /* top: 0.4rem; */
+    bottom: 0.05rem;
+    height: 40px;
+    font-size: 25px;
+    width: 10px;
+    color: black !important;
 }
 
 .filter-item i:hover {
     color: #5bc0de;
+}
+
+.fa-fa-times::before {
+    content: \f00d !important; 
 }
 
 /* .item .rectangle{

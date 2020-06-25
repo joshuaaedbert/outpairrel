@@ -24,7 +24,7 @@ export default class Wardrobe_item extends Component {
                     <span className='rectangle'></span>
                     <span className='rectangle'></span> */}
                     <span className='rectangle'><img className='img' src={`image/${id}.png`}/></span>
-                    
+                    {/* {console.log('id: ' + tags)} */}
                 </div>
             </div>
         )

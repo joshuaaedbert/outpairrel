@@ -4,12 +4,8 @@
     grid-template-columns: auto auto;
 } */
 
-.grid{
+.grid3{
     width: auto;
     display: inline-grid !important;
     grid-template-columns: auto auto;
-}
-
-.list-group{
-    /* flex-direction: unset !important; */
 }
