@@ -6,7 +6,8 @@ function getProduct() {
     return axios.get(url, {
         headers: {
             "x-rapidapi-host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
-            "x-rapidapi-key": "36b99220c9mshc808751dbcee44cp15bb91jsn8b4b792f0418"
+            "x-rapidapi-key": "6555a7d138msha5a289652d20176p1790a3jsn577cdb6a8b03",
+            "useQueryString": true
         }
     }).then(res => {
         console.log(res.data.results);

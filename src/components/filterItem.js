@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './filter_item.css'
+import './filterItem.css'
 
-export default class Wardrobe_item extends Component {
+export default class FilterItem extends Component {
     static propTypes = {
         text: PropTypes.string
     }

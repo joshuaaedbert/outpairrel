@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './filter_list.css';
+import './filterList.css';
 import { ListGroup, ListGroupItem } from 'reactstrap';
-import Filter_item from './filter_item.js'
+import FilterItem from './filterItem.js'
 
 
-export default class Wardrobe_list extends React.Component {
+export default class FilterList extends React.Component {
     static propTypes = {
         filter: PropTypes.array
     };
@@ -21,7 +21,7 @@ export default class Wardrobe_list extends React.Component {
         
         let children = filter.map(p =>(
             <ListGroupItem className='filter-list'>
-                <Filter_item text={p} handleClear={this.handleClear}/>
+                <FilterItem text={p} handleClear={this.handleClear}/>
             </ListGroupItem>
         ));
         return (
