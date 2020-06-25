@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Alert, Collapse, Container, Button, Input } from 'reactstrap';
 import './Wardrobe.css'
-import Wardrobe_list from './Wardrobe_list.js';
+import WardrobeList from './wardrobeList.js';
 import { Row, Col } from 'reactstrap';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import './react-sidenav.css'
-import Filter_list from './filter_list.js'
+import FilterList from './filterList.js'
 import { connect } from 'react-redux';
 import { setfilters } from '../actions/wardrobe-actions';
 
@@ -69,10 +69,10 @@ class Wardrobe extends Component {
                                     <i className='navbar-text fa fa-times' onClick={this.handleClearSearch}></i>
                                 }
                             </div>
-                            <Filter_list filter={filter} handleClear={this.handleClear} />
+                            <FilterList filter={filter} handleClear={this.handleClear} />
                         </Collapse>
                     </SideNav>
-                    <Wardrobe_list className='wardrobe-list' lists={this.state.lists} filter={filter} expanded={this.state.buttonToggle} />
+                    <WardrobeList className='wardrobe-list' lists={this.state.lists} filter={filter} expanded={this.state.buttonToggle} />
                 </div>
             </div>
         )

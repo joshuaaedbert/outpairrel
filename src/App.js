@@ -19,6 +19,7 @@ import ProductQuery from './components/ProductQuery';
 import Post from './components/Post';
 
 import './App.css';
+import Photo from './components/Photo';
 
 export default class App extends Component {
   // constructor() {
@@ -56,6 +57,11 @@ export default class App extends Component {
                   Wardrobe
                 </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink className="text-white" tag={Link} to="/photo">
+                  New Post
+                </NavLink>
+              </NavItem>
             </Nav>
           </Navbar>
         </div>
@@ -65,6 +71,7 @@ export default class App extends Component {
           <Route exact path="/style" render={() => <Style />} />
           <Route exact path="/wardrobe" render={() => <Wardrobe />} />
           <Route exact path="/product_query" render={() => <ProductQuery />} />
+          <Route exact path="/photo" render={() => <Photo />} />
           <Route exact path="/post/:id" component={Post} />
         </div>
       </Router>

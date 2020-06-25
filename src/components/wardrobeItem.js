@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Wardrobe_item.css'
+import './wardrobeItem.css'
 
-export default class Wardrobe_item extends Component {
+export default class WardrobeItem extends Component {
     static propTypes = {
         id: PropTypes.number,
         tags: PropTypes.array,
