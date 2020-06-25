@@ -10,7 +10,7 @@ function getProduct() {
             "useQueryString": true
         }
     }).then(res => {
-        console.log(res.data.results);
+        return res.data.results;
     }).catch(err => {
         console.log(err);
     });

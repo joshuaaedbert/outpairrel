@@ -18,7 +18,7 @@ export default class PostList extends Component {
         if(posts.length) {
             children = posts.map(post => (
                 <ListGroupItem className="d-flex justify-content-center" key={post.id}>
-                    <PostItem id={post.id} photo={post.photo} like={post.like} />
+                    <PostItem id={post.code} photo={post.defaultArticle.images[0].url} like={post.price.formattedValue} />
                 </ListGroupItem>
             ))
         }
