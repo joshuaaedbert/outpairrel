@@ -14,7 +14,7 @@ import {
 import Home from './components/Home';
 import Discover from './components/Discover';
 import Style from './components/Style';
-import Wardrobe from './components/wardrobe';
+import Wardrobe from './components/Wardrobe';
 import ProductQuery from './components/ProductQuery';
 import Post from './components/Post';
 
