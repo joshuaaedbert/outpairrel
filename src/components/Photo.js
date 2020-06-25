@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Input } from 'reactstrap';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './Photo.css'
 
 function Photo() {
@@ -26,11 +28,11 @@ function Photo() {
 
         setImage(file.secure_url)
         setLoading(false)
-        
+
     }
 
-     if( change ){
-        if(loading){
+    if (change) {
+        if (loading) {
             name = ''
             // console.log('here')
             r = <span> Loading </span>
@@ -39,23 +41,28 @@ function Photo() {
             name = '-change'
             r = <img src={image} style={{ width: '300px' }} />
         }
-     }
-     else {
+    }
+    else {
         name = '';
         r = <input
-        type="file"
-        name="file"
-        placeholder="Upload an image"
-        onChange={uploadImage}
+            type="file"
+            name="file"
+            placeholder="Upload an image"
+            onChange={uploadImage}
         />
-     }
+    }
     return (
         <div className="photo">
-            <div className= {`rec${name} align-items-center align-self-center`}>
-                <div style={{margin: 'auto'}}>
+            <span className={`rec${name} align-items-center align-self-center`}>
+                <span style={{ margin: 'auto' }}>
                     {r}
-                </div>  
-            </div>
+                </span>
+            </span>
+            <span className='search'>
+                <Link to="/product_query" style={{ textDecoration: 'none' }}>
+                Add tags
+                </Link>
+            </span>
         </div>
     )
 

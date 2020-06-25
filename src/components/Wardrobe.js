@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Alert, Collapse, Container, Button, Input } from 'reactstrap';
-import './Wardrobe.css'
-import WardrobeList from './wardrobeList.js';
+import './wardrobe.css'
+import WardrobeList from './WardrobeList.js';
 import { Row, Col } from 'reactstrap';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 // import '@trendmicro/react-sidenav/dist/react-sidenav.css';

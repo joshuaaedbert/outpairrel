@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './wardrobeList.css';
+import './WardrobeList.css';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import { listWardrobe, createWardrobe } from '../api/wardrobe.js'
 import {listPosts, createPost} from '../actions/wardrobe-actions.js';
-import WardrobeItem from './wardrobeItem.js'
+import WardrobeItem from './WardrobeItem.js'
 import {connect} from 'react-redux';
 
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './filterList.css';
+import './FilterList.css';
 import { ListGroup, ListGroupItem } from 'reactstrap';
-import FilterItem from './filterItem.js'
+import FilterItem from './FilterItem.js'
 
 
 export default class FilterList extends React.Component {
