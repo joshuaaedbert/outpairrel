@@ -12,10 +12,9 @@ export function createTag(tags) {
     };
 }
 
-export function clearTag(tags) {
+export function clearTag() {
     return {
-        type: '@TAG/CLEAR_TAGS',
-        tags
+        type: '@TAG/CLEAR_TAGS'
     };
 }
 

@@ -36,7 +36,7 @@ const postReducer = (state = initPostState, action) => {
             return {
                 ...state,
                 id: state.id+1,
-                item: newItems,
+                posts: newItems
             };
         default:
             return state;
@@ -56,7 +56,8 @@ export function tagReducer(state = [], action) {
 
   const initTagState = {
     item: [],
-    img: ''
+    img: '',
+    upload: false
 }
 
 export function listTagReducer(state = initTagState, action) {
@@ -85,7 +86,8 @@ export function listTagReducer(state = initTagState, action) {
         case '@TAG/CLEAR_TAGS':
             return {
                 img: '',
-                item: []
+                item: [],
+                upload: true
             };
         
         case '@TAG/SET_IMG':

@@ -2,7 +2,7 @@ import React, { useState, useEffect, Component } from 'react';
 import { Input, Button } from 'reactstrap';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { useSelector, useDispatch, connect } from 'react-redux';
-import { setImg, addPost } from '../actions/post-actions';
+import { setImg, addPost, clearTag } from '../actions/post-actions';
 import './Photo.css'
 import {
     ListGroup,
@@ -15,33 +15,23 @@ class Photo extends Component {
         this.state = {
             image: '',
             loading: false,
-            change: false
+            change: false,
+            upload: false
         }
         this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
         const {img} = this.props
-        console.log('img when mount : ' + img)
+        console.log('img: ' + img)
         if(img){
-            console.log('img : ' + img)
             this.setState({
                 image: img,
                 change: true
             })
         }
     }
-
-    componentWillUnmount() {
-        const {img} = this.props
-        console.log('img when unmount : ' + img)
-        this.props.dispatch(setImg(this.state.image))
-    }
-    // const [image, setImage] = useState('')
-    // const [loading, setLoading] = useState(false)
-    // const [change, setChange] = useState(false)
-    // const listTags = useSelector(state => state.listTags.item);
-    // const img = useSelector(state => state.listTags.img);
+    
     render(){
     const {listTags} = this.props
     let r;
@@ -73,6 +63,7 @@ class Photo extends Component {
             loading: false,
             image: file.secure_url
         })
+        this.props.dispatch(setImg(file.secure_url))
     }
 
 
@@ -113,32 +104,40 @@ class Photo extends Component {
     }
     return (
         <div className="photo">
-            <span className={`rec${name} align-items-center align-self-center`}>
-                <span style={{ margin: 'auto' }}>
-                    {r}
+                <span className={`rec${name} align-items-center align-self-center`}>
+                    <span style={{ margin: 'auto' }}>
+                        {r}
+                    </span>
                 </span>
-            </span>
-            <span className='search'>
-                <Link to="/tags" style={{ textDecoration: 'none' }}>
-                Add tags
-                </Link>
-                <div className='tags'>
-                    <ListGroup>{children}</ListGroup>
-                </div>
-            </span>
-            <Button onClick={this.handleClick}>Upload</Button>
+                <span className='search' style={{width: '25rem'}}>
+                    <Link to="/tags" style={{ textDecoration: 'none' }}>
+                    Add tags
+                    </Link>
+                    <div className='tags'>
+                        <ListGroup>{children}</ListGroup>
+                    </div>
+                </span>
+            <Link to="/" style={{display: 'block', height: '2.5rem', right: '1rem', marginTop: 'auto'}} onClick={this.handleClick}>Upload</Link>
         </div>
+            
     )
     }
 
     handleClick(){
         const {listTags} = this.props
         this.props.dispatch(addPost(listTags, this.state.image))
+        this.props.dispatch(clearTag())
+        this.setState({
+            image: '',
+            loading: true,
+            change: false
+        })
     }
 
 }
 
 export default connect(state => ({
     listTags: state.listTags.item,
-    img: state.listTags.img
+    img: state.listTags.img,
+    upload: state.listTags.upload
 }))(Photo);
