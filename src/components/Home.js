@@ -6,6 +6,7 @@ import getProduct from '../api/products';
 
 function Home() {
   // const posts = useSelector(state => state.posts.posts);
+  const [productList, updateProducts] = useState([]);
   useEffect(function() {
     getProduct().then(products => {
       updateProducts(products);
@@ -15,7 +16,7 @@ function Home() {
 
   return (
     <div className="posts">
-      <PostList posts={posts} />
+      <PostList posts={productList} />
     </div>
   );
 }
