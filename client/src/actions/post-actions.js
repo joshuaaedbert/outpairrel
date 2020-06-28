@@ -31,3 +31,9 @@ export function addPost(tags, img){
         tags, img
     };
 }
+
+export function listPosts(){
+    return {
+        type: '@POSTS/LIST_POSTS'
+    }
+}
