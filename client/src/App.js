@@ -17,6 +17,7 @@ import Style from './components/Style';
 import Wardrobe from './components/Wardrobe';
 import ProductQuery from './components/ProductQuery';
 import Post from './components/Post';
+import Tag from './components/Tag';
 
 import './App.css';
 import Photo from './components/Photo';
@@ -71,6 +72,7 @@ export default class App extends Component {
           <Route exact path="/style" render={() => <Style />} />
           <Route exact path="/wardrobe" render={() => <Wardrobe />} />
           <Route exact path="/product_query" render={() => <ProductQuery />} />
+          <Route exact path="/tags" render={() => <Tag />} />
           <Route exact path="/photo" render={() => <Photo />} />
           <Route exact path="/post/:id" component={Post} />
         </div>
