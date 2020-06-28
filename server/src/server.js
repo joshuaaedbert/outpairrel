@@ -12,6 +12,7 @@ app.use(express.static('build', {
 }));
 
 app.use('/api', postRouter);
+
 app.use(errorHandler);
 
 const port = 3000;
