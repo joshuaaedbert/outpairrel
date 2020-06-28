@@ -8,39 +8,39 @@ const initPostState = {
 
 const postReducer = (state = initPostState, action) => {
     switch (action.type) {
-        case '@POSTS/LIST_POSTS':
-            listPosts().then(posts => {
-                return {
-                    postLoading: false,
-                    posts: posts,
-                    hasMore: true
-                }
-            })
-        case '@POSTS/ADD_POST':
-            // var newItems = [...state.posts];
-            // var post = {
-            //     id: state.id,
-            //     photo: action.img,
-            //     tags: action.tags,
-            //     like: 0
-            // }
-            // newItems = [post, ...newItems];
-            // return {
-            //     ...state,
-            //     id: state.id+1,
-            //     posts: newItems
-            // };
-            createPost(action.tags, action.img).then(
-                listPosts().then(posts => {
-                    return {
-                        postLoading: false,
-                        posts: posts,
-                        hasMore: true
-                    }
-                })
-            ).catch(err => {
-                console.log('Error creating posts', err);
-            })
+        // case '@POSTS/LIST_POSTS':
+        //     listPosts().then(posts => {
+        //         return {
+        //             postLoading: false,
+        //             posts: posts,
+        //             hasMore: true
+        //         }
+        //     })
+        // case '@POSTS/ADD_POST':
+        //     // var newItems = [...state.posts];
+        //     // var post = {
+        //     //     id: state.id,
+        //     //     photo: action.img,
+        //     //     tags: action.tags,
+        //     //     like: 0
+        //     // }
+        //     // newItems = [post, ...newItems];
+        //     // return {
+        //     //     ...state,
+        //     //     id: state.id+1,
+        //     //     posts: newItems
+        //     // };
+        //     createPost(action.tags, action.img).then(
+        //         listPosts().then(posts => {
+        //             return {
+        //                 postLoading: false,
+        //                 posts: posts,
+        //                 hasMore: true
+        //             }
+        //         })
+        //     ).catch(err => {
+        //         console.log('Error creating posts', err);
+        //     })
         default:
             return state;
     }

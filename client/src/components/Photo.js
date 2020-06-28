@@ -118,7 +118,7 @@ class Photo extends Component {
                         <ListGroup>{children}</ListGroup>
                     </div>
                 </span>
-                <Link to="/" style={{ display: 'block', height: '2.5rem', right: '1rem', marginTop: 'auto' }} onClick={this.handleClick}>Upload</Link>
+                <Link to="/photo" style={{ display: 'block', height: '2.5rem', right: '1rem', marginTop: 'auto' }} onClick={this.handleClick}>Upload</Link>
             </div>
 
         )
@@ -126,24 +126,24 @@ class Photo extends Component {
     
     handleClick() {
         const { listTags } = this.props;
-        this.props.dispatch(addPost(listTags, this.state.image));
-        this.props.dispatch(clearTag());
-        this.setState({
-            image: '',
-            loading: true,
-            change: false
-        });
-        // createPost(listTags, this.state.image).then(() => {
-        //     this.props.dispatch(clearTag());
-        //     this.setState({
-        //         image: '',
-        //         loading: true,
-        //         change: false
-        //     });
+        // this.props.dispatch(addPost(listTags, this.state.image));
+        // this.props.dispatch(clearTag());
+        // this.setState({
+        //     image: '',
+        //     loading: true,
+        //     change: false
+        // });
+        createPost(listTags, this.state.image).then(() => {
+            this.props.dispatch(clearTag());
+            this.setState({
+                image: '',
+                loading: true,
+                change: false
+            });
             
-        // }).catch(err => {
-        //     console.log('Error creating posts', err);
-        // })
+        }).catch(err => {
+            console.log('Error creating posts', err);
+        })
     }
 
 }

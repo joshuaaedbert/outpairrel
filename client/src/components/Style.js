@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Style.css';
 import { Button, NavItem, NavLink } from 'reactstrap';
 import { ListGroup, ListGroupItem } from 'reactstrap';
@@ -6,9 +6,18 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import PostItem from './PostItem';
+import { listPosts } from '../api/posts';
 
 function Style() {
-  const posts = useSelector((state) => state.posts.posts);
+  // const posts = useSelector((state) => state.posts.posts);
+  const [posts, updatePosts] = useState([]);
+  
+  useEffect(() => {
+    listPosts().then(posts => {
+      updatePosts(posts);
+    })
+  })
+
   let children = (
     <ListGroupItem className="empty d-flex justify-content-center align-items-center">
       <div className="empty-text">The End.</div>

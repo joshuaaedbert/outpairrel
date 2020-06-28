@@ -17,8 +17,8 @@ export default class PostList extends Component {
         );
         if(posts.length) {
             children = posts.map(post => (
-                <ListGroupItem className="d-flex justify-content-center" key={post.id}>
-                    <PostItem id={post.id} photo={post.photo} like={post.like} />
+                <ListGroupItem className="d-flex justify-content-center">
+                    <PostItem id={post.id} photo={post.photo} likes={post.likes} />
                 </ListGroupItem>
             ))
         }
