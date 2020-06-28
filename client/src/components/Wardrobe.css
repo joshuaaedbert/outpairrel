@@ -2,7 +2,7 @@
 .w-lists .search_w {
     position: relative;
     top: 0rem;
-    left: 1.75rem;
+    left: 1.75rem !important;
     width: 100%;
 }
 
@@ -31,4 +31,13 @@
     /* max-width: 300px; */
     width: 100%;
     /* display: inline-block; */
+}
+
+.form-control{
+    height: calc(1.5em + .75rem + 2px) !important;
+    padding: .375rem .75rem !important;
+    border-radius: .25rem !important;
+    width: 80% !important;
+    background-color: white !important;
+    margin: 0 auto !important;
 }

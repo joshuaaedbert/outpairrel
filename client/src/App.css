@@ -19,6 +19,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
@@ -39,4 +40,8 @@
 
 .pages {
   padding-top: 50px;
+}
+
+.nav-link{
+  padding: 0rem 1rem !important;
 }
