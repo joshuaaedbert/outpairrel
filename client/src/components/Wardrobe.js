@@ -20,6 +20,15 @@ class Wardrobe extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            lists: [['Hoodie', 'hoodie', 'none', 'none'],
+            ['Shirt', 'none', 'none', 'none'],
+            ['Jacket', 'none', 'none', 'none'],
+            ['Sweatshirts', 'none', 'none', 'none'],
+            ['T-shirts', 'none', 'none', 'none'],
+            ['Dress', 'none', 'none', 'none'],
+            ['Shorts', 'none', 'none', 'none'],
+            ['Trousers', 'none', 'none', 'none'],
+            ['Shoes', 'none', 'none', 'none']],
             buttonToggle: false,
             searchText: []
         }
