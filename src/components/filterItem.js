@@ -17,7 +17,7 @@ export default class FilterItem extends Component {
         return (
             <div>
                 <div className='filter-item d-flex flex-row justify-content-between align-items-center'>
-                    <span style={{color: 'black', left: '0.5rem'}}>{text}<span style={{width: '20px', right: '0.25rem', position: 'absolute', fontSize: '18px'}} className='fa fa-times text-primary' onClick={() => this.handleClear(text)}>x</span></span>
+                    <span style={{color: 'black', left: '0.5rem'}}>{text}<i style={{width: '20px', right: '0.15rem', position: 'absolute', fontSize: '18px', display: 'inline'}} className='fa fa-times' onClick={() => this.handleClear(text)}></i></span>
                 </div>
             </div>
         )

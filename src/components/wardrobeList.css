@@ -4,7 +4,7 @@
     grid-template-columns: auto auto;
 } */
 
-.grid3{
+.inline-grid{
     width: auto;
     display: inline-grid !important;
     grid-template-columns: auto auto;
