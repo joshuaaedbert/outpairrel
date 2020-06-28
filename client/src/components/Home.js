@@ -5,11 +5,11 @@ import getProduct from '../api/products';
 import './Home.css';
 
 function Home() {
-  useEffect(() => {
-    getProduct().then(products => {
-      console.log(products)
-    });
-  })
+  // useEffect(() => {
+  //   getProduct().then(products => {
+  //     console.log(products)
+  //   });
+  // })
   const posts = useSelector(state => state.posts.posts);
   
   return (
