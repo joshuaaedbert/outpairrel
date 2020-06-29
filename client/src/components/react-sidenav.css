@@ -1,18 +1,20 @@
 /*! react-sidenav v0.5.0 | (c) 2020 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-sidenav */
 .sidenav---sidenav---_2tBP {
   position: fixed;
-  top: 3.5rem;
+  top: 4rem;
   bottom: 0;
   left: 0;
   z-index: 1006;
   min-width: 64px;
   /* background: #db3d44; */
-  background: transparent;
+  background: transparent !important;
+  width: 2.25rem;
   -webkit-transition: min-width 0.2s;
   -moz-transition: min-width 0.2s;
   -o-transition: min-width 0.2s;
   -ms-transition: min-width 0.2s;
   transition: min-width 0.2s;
+  box-shadow: none !important;
   height: 10%;
 }
 .sidenav---sidenav---_2tBP.sidenav---collapsed---LQDEv .sidenav---sidenav-nav---3tvij .sidenav---sidenav-navitem---uwIJ- .sidenav---sidenav-subnav---1EN61 {
@@ -25,7 +27,7 @@
   min-width: 240px;
   height: 100%;
   position: fixed;
-  background:#db3d44;
+  background:#db3d44 !important;
 }
 .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- .sidenav---navicon---3gCRo + .sidenav---navtext---1AE_f {
   visibility: visible;
@@ -115,7 +117,7 @@
   height: 64px;
   padding: 0;
   margin: 0;
-  background-color: transparent;
+  background-color: transparent !important;
   background-image: none;
   border: 0;
   border-radius: 0;

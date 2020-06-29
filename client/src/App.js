@@ -33,7 +33,7 @@ export default class App extends Component {
     return (
       <Router>
         <div className="App bg-faded">
-          <Navbar className="navbar fixed-top bg-secondary">
+          <Navbar className="navbar fixed-top bg-secondary" style={{height: '4rem', alignContent:'center'}}>
             <NavbarBrand className="text-white" href="/">
               Outpairrel
             </NavbarBrand>

@@ -1,10 +1,4 @@
-/* .wardrobe-list{
-    width: auto;
-    display: inline-block !important;
-    grid-template-columns: auto auto;
-} */
-
-.grid{
+.inline-grid{
     width: auto;
     display: inline-grid !important;
     grid-template-columns: auto auto;
@@ -12,10 +6,10 @@
 }
 
 .list-group-item-open{
-    left: 16rem !important;
+    left: 17rem !important;
 }
 
 .list-group-item{
-    left: 4rem;
+    left: 5rem;
     top: 1rem;
 }

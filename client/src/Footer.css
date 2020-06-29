@@ -1,0 +1,33 @@
+.footer{
+    background: black;
+    margin-left: 12.8em;
+    margin-right: 12.8em;
+}
+
+.footer:before {
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 90%; /* Change this to whatever width you want. */
+    padding-bottom: 20px; /* This creates some space between the element and the border. */
+    border-bottom: 1px solid white; /* This creates the border. Replace black with whatever color you want. */
+}
+
+.footer-grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 3px;
+  }
+  .footer-grid-item {
+    background-color: white;
+    padding: 20px;
+    text-align: left;
+  }
+
+.footer-grid-item > h4{
+    background-color: rgb(245, 245, 244);
+}
+
+.brand-name{
+    color: whitesmoke;
+}

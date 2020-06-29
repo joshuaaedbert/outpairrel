@@ -56,7 +56,7 @@ class WardrobeList extends React.Component {
         ));
         return (
             <div>
-                <ListGroup className='grid'>{children}</ListGroup>
+                <ListGroup className='inline-grid'>{children}</ListGroup>
             </div>
         );
     }

@@ -56,7 +56,8 @@ class Tag extends Component {
             <SideNav.Toggle />
             <Collapse isOpen={this.state.buttonToggle}>
               <div className='search'>
-                <Input type='text' innerRef={this.searchEl} placeholder='Search' onKeyPress={this.handleSearchKeyPress} innerRef={e => this.searchEl = e}></Input>
+                <Input type='text' innerRef={this.searchEl} placeholder='Search' onKeyPress={this.handleSearchKeyPress} innerRef={e => this.searchEl = e}
+                style={{padding: '0.375rem .75rem', borderRadius: '.25rem', height: 'calc(1.5em + .75rem + 2px)', width: '80%', margin: '0 auto', backgroundColor:'white'}}></Input>
                 {
                   this.state.searchText.length >= 1 &&
                   <i className='navbar-text fa fa-times' onClick={this.handleClearSearch}></i>
