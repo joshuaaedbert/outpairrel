@@ -1,22 +1,70 @@
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch, connect } from 'react-redux';
 import PostList from './PostList';
-import getProduct from '../api/products';
+// import { listPosts } from '../actions/post-actions'
+import { listPosts } from '../api/posts';
+// import getProduct from '../api/products';
 import './Home.css';
 
-function Home() {
-  // useEffect(() => {
-  //   getProduct().then(products => {
-  //     console.log(products)
-  //   });
-  // })
-  const posts = useSelector(state => state.posts.posts);
+// function Home() {
+//   const [posts, updatePosts] = useState([]);
+//   // const dispatch = useDispatch();
+//   useEffect(() => {
+//     // dispatch(listPosts());
+    
+//     listPosts().then(posts => {
+//       updatePosts(posts);
+//     })
+//   })
+
+//   // const posts = useSelector(state => state.posts.posts);
+
+//   return (
+//     <div className="posts">
+//       <PostList posts={posts} />
+//     </div>
+//   );
+// }
+
+// export default Home;
+export default class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: []
+    }
+  }
   
-  return (
-    <div className="posts">
-      <PostList posts={posts} />
-    </div>
-  );
+  componentDidMount() {
+    listPosts().then(posts => {
+      this.setState({
+        posts: posts
+      })
+    })
+  }
+
+  // componentDidUpdate(prevState) {
+  //   let flag = true;
+  //   if(flag) {
+  //     listPosts().then(posts => {
+  //       if(posts !== prevState.posts) {
+  //         this.setState({
+  //           posts: posts
+  //         })
+  //       }
+  //       else {
+  //         flag = false;
+  //       }
+  //     })
+  //   }
+  // }
+
+  render() {
+    return (
+      <div className="posts">
+        <PostList posts={this.state.posts} />
+      </div>
+    )
+  }
 }
 
-export default Home;

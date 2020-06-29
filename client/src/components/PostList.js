@@ -12,13 +12,13 @@ export default class PostList extends Component {
         const {posts} = this.props;
         let children = (
             <ListGroupItem className="d-flex justify-content-center align-items-center">
-                <div className="empty-text">The End.</div>
+                <h1 className="font-serif text-lg text-gray-800 text-center mx-auto "> Outpairrel 2020 </h1>
             </ListGroupItem>
         );
         if(posts.length) {
             children = posts.map(post => (
-                <ListGroupItem className="d-flex justify-content-center" key={post.id}>
-                    <PostItem id={post.id} photo={post.photo} like={post.like} />
+                <ListGroupItem className="d-flex justify-content-center">
+                    <PostItem id={post.id} photo={post.photo} likes={post.likes} />
                 </ListGroupItem>
             ))
         }

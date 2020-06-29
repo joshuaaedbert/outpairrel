@@ -13,15 +13,16 @@ export function listPosts() {
     });
 }
 
-// export function createPost() {
-//     let url = `${postBaseUrl}/posts`;
-//     console.log(`Making POST request to: ${url}`);
+export function createPost(tags, photo) {
+    let url = `${postBaseUrl}/posts`;
+    console.log(`Making POST request to: ${url}`);
 
-//     return axios.post(url, {
-
-//     }).then(function(res) {
-//         if(res.status !== 200)
-//             throw new Error(`Unexpected response code: ${res.status}`);
-//         return res.data;
-//     })
-// }
+    return axios.post(url, {
+        tags,
+        photo
+    }).then(function(res) {
+        if(res.status !== 200)
+            throw new Error(`Unexpected response code: ${res.status}`);
+        return res.data;
+    })
+}

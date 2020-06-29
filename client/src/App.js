@@ -33,34 +33,34 @@ export default class App extends Component {
     return (
       <Router>
         <div className="App bg-faded">
-          <Navbar className="navbar fixed-top bg-secondary">
-            <NavbarBrand className="text-white" href="/">
+          <Navbar className="navbar fixed-top bg-dark" style={{height: '4rem', alignContent:'center'}}>
+            <NavbarBrand className="MainLogo" href="/">
               Outpairrel
             </NavbarBrand>
             <Nav>
               <NavItem>
                 <NavLink className="text-white" tag={Link} to="/">
-                  Home
+                <i class="fas fa-home"></i>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="text-white" tag={Link} to="/discover">
-                  Discover
+                <i class="fas fa-search"></i>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="text-white" tag={Link} to="/style">
-                  Style
+                <i class="fas fa-tshirt"></i>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="text-white" tag={Link} to="/wardrobe">
-                  Wardrobe
+                <i class="fas fa-door-open"></i>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="text-white" tag={Link} to="/photo">
-                  New Post
+                <i class="fas fa-plus"></i>
                 </NavLink>
               </NavItem>
             </Nav>

@@ -15,13 +15,13 @@ router.get('/posts', function(req, res, next) {
 })
 
 router.post('/posts', function(req, res, next) {
-    const { tag, photo } = req.body;
-    if(!tag || !photo) {
+    const { tags, photo } = req.body;
+    if(!tags || !photo) {
         const err = new Error('Tag and Photo are required');
         err.status = 400;
         throw err;
     }
-    postModel.create(tag, photo).then(post => {
+    postModel.create(tags, photo).then(post => {
         res.json(post);
     }).catch(next);
 })

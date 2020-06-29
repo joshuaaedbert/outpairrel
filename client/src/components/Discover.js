@@ -4,34 +4,45 @@ import '../assets/main.css'
 import ImageCard from './ImageCard.js'
 import ImageSearch from './ImageSearch';
 import { useSelector } from 'react-redux';
+import { listPosts } from '../api/posts';
 
-function Discover() {
-    const [isLoading, setIsLoading] = useState(true);
-    const [term, setTerm] = useState('');
-    const posts = useSelector(state => state.posts.posts);
-
-    let filters = [term];
-    let post = posts;
-    if (posts.length > 0 && term) {
-        post = posts.filter(p => {
-            return p.tags[0][0].tags.includes(term)
-        });
+export default class Discover extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            term: '',
+            posts: []
+        }
     }
 
-    return (
-        <div className="container mx-auto">
-            <ImageSearch searchText={(text) => setTerm(text)} />
-            
-            <div className="grid grid-cols-3 gap-4">
-                {post.map(post => (
-                    <ImageCard id={post.id} photo={post.photo} like={post.like} /> //id={post.id} photo={post.photo} like={post.like}
-                ))}
+    componentDidMount() {
+        listPosts().then(posts => {
+            this.setState({
+                posts: posts
+            })
+        })
+    }
+
+    render() {
+        let post = this.state.posts;
+        console.log(this.state.term)
+        if (this.state.posts.length > 0 && this.state.term) {
+            post = this.state.posts.filter(p => {
+                return p.tags[0].tags.includes(this.state.term)
+            });
+        }
+        return (
+            <div className="container mx-auto">
+                <ImageSearch searchText={(text) => this.setState({term: text})} />
+
+                <div className="grid grid-cols-3 gap-4">
+                    {post.map(post => (
+                        <ImageCard id={post.id} photo={post.photo} like={post.likes} /> 
+                    ))}
+                </div>
+
+                <h1 className="font-serif text-lg text-gray-800 text-center mx-auto mt-10 mb-10"> Outpairrel 2020 </h1>
             </div>
-
-            <h1 className="font-serif text-lg text-gray-800 text-center mx-auto mt-10 mb-10"> Outpairrel 2020 </h1>
-        </div>
-
-    )
+        )
+    }
 }
-
-export default Discover;

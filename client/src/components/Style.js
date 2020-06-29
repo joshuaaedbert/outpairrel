@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Style.css';
 import { Button, NavItem, NavLink } from 'reactstrap';
 import { ListGroup, ListGroupItem } from 'reactstrap';
@@ -6,48 +6,115 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import PostItem from './PostItem';
+import { listPosts } from '../api/posts';
 
-function Style() {
-  const posts = useSelector((state) => state.posts.posts);
-  let children = (
-    <ListGroupItem className="empty d-flex justify-content-center align-items-center">
-      <div className="empty-text">The End.</div>
-    </ListGroupItem>
-  );
-  if (posts.length) {
-    children = posts.map((post) => (
-      <ListGroupItem key={post.id}>
-        <PostItem
-          id={post.id}
-          photo={post.photo}
-          like={post.like}
-        />
-      </ListGroupItem>
-    ));
+// function Style() {
+//   // const posts = useSelector((state) => state.posts.posts);
+//   const [posts, updatePosts] = useState([]);
+
+//   useEffect(() => {
+//     listPosts().then(posts => {
+//       updatePosts(posts);
+//     })
+//   })
+
+//   let children = (
+//     <ListGroupItem className="empty d-flex justify-content-center align-items-center">
+//       <div className="empty-text">The End.</div>
+//     </ListGroupItem>
+//   );
+//   if (posts.length) {
+//     children = posts.map((post) => (
+//       <ListGroupItem key={post.id}>
+//         <PostItem
+//           id={post.id}
+//           photo={post.photo}
+//           like={post.like}
+//         />
+//       </ListGroupItem>
+//     ));
+//   }
+
+//   return (
+//     <div className="container">
+//       <div className="flex">
+//         <div className="styling">
+//           <Link to="/product_query" style={{ textDecoration: 'none' }}>
+//             + add clothing
+//           </Link>
+//         </div>
+
+//         <div
+//           className="v-line"
+//           style={{
+//             border: '2px solid black',
+//           }}
+//         ></div>
+
+//         <div className="posts">
+//           <ListGroup>{children}</ListGroup>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Style;
+
+export default class Style extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: []
+    }
   }
 
-  return (
-    <div className="container">
-      <div className="flex">
-        <div className="styling">
-          <Link to="/product_query" style={{ textDecoration: 'none' }}>
-            + add clothing
+  componentDidMount() {
+    listPosts().then(posts => {
+      this.setState({
+        posts: posts
+      })
+    })
+  }
+
+  render() {
+    let children = (
+      <ListGroupItem className="empty d-flex justify-content-center align-items-center">
+        <div className="empty-text">The End.</div>
+      </ListGroupItem>
+    );
+    if (this.state.posts.length) {
+      children = this.state.posts.map((post) => (
+        <ListGroupItem key={post.id}>
+          <PostItem
+            id={post.id}
+            photo={post.photo}
+            like={post.like}
+          />
+        </ListGroupItem>
+      ));
+    }
+    return (
+      <div className="container">
+        <div className="flex">
+          <div className="styling">
+            <Link to="/product_query" style={{ textDecoration: 'none' }}>
+              + add clothing
           </Link>
-        </div>
+          </div>
 
-        <div
-          className="v-line"
-          style={{
-            border: '2px solid black',
-          }}
-        ></div>
+          <div
+            className="v-line"
+            style={{
+              border: '2px solid black',
+            }}
+          ></div>
 
-        <div className="posts">
-          <ListGroup>{children}</ListGroup>
+          <div className="posts">
+            <ListGroup>{children}</ListGroup>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    )
+  }
 }
-
-export default Style;

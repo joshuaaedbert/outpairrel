@@ -16,7 +16,8 @@ export default class FilterItem extends Component {
         const {text} = this.props;
         return (
             <div>
-                <div className='filter-item d-flex flex-row justify-content-between align-items-center'>
+                <div className='filter-item d-flex flex-row justify-content-between align-items-center'
+                style={{color: 'black'}}>
                     <span>{text}<i className='fa fa-times' onClick={() => this.handleClear(text)}></i></span>
                 </div>
             </div>

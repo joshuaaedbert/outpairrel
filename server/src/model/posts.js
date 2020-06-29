@@ -1,5 +1,5 @@
 const fs = require('fs');
-const uuid = require('uuid');
+const { uuid } = require('uuidv4');
 const moment = require('moment');
 
 function list() {
@@ -11,24 +11,25 @@ function list() {
         fs.readFile('data-posts.json', 'utf8', (err, data) => {
             if(err) reject(err);
             let posts = data ? JSON.parse(data) : [];
+
             resolve(posts);
-        })
-    })
+        });
+    });
 }
 
-function create(tag, photo) {
+function create(tags, photo) {
     return new Promise((resolve, reject) => {
         const newPost = {
             id: uuid(),
             ts: moment().unix(),
             likes: 0,
             photo: photo,
-            tag: tag
+            tags: tags
         };
         list().then(posts => {
             posts = [
-                posts,
-                newPost
+                newPost,
+                ...posts,
             ];
             fs.writeFile('data-posts.json', JSON.stringify(posts), err => {
                 if(err) reject(err);
