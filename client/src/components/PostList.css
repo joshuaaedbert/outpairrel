@@ -1,0 +1,5 @@
+.list-group-item {
+    position: center;
+    display: block;
+    padding: .75rem 1.25rem;
+}

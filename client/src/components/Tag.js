@@ -30,6 +30,7 @@ class Tag extends Component {
 
   componentDidMount() {
     getProduct().then(products => {
+      // console.log(products)
       this.setState({
         productList: products
       })

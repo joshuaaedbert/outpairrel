@@ -14,10 +14,10 @@ export default class PostItem extends Component {
         const { id, photo, likes } = this.props;
         return (
             <Link to={`/post/${id}`}>
-                <div className="article d-flex justify-content-center" onClick={this.handleClick}>
+                <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto" onClick={this.handleClick}>
                     <div>
                         <img src={photo} alt={id} />
-                        <h6 className="likes">{likes} likes</h6>
+                        <h6 className="likes font-bold text-purple-500 text-xl-mb-2">{likes} likes</h6>
                     </div>
                 </div>
             </Link>
