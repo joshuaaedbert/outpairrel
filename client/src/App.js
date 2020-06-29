@@ -35,7 +35,8 @@ export default class App extends Component {
         <div className="App bg-faded">
           <Navbar className="navbar fixed-top bg-dark" style={{height: '4rem', alignContent:'center'}}>
             <NavbarBrand className="MainLogo" href="/">
-              Outpairrel
+              <i class="fas fa-circle-notch"></i>
+              utpairrel
             </NavbarBrand>
             <Nav>
               <NavItem>
